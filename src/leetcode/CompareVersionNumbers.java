@@ -2,21 +2,24 @@ package leetcode;
 
 public class CompareVersionNumbers {
     public static int compareVersion(String version1, String version2) {
-        int dot1 = 0, dot2 = 0;
+        String[] v1 = version1.split("\\.");
+        String[] v2 = version2.split("\\.");
 
-        dot1 = version1.indexOf('.', dot1);
-        dot2 = version2.indexOf('.', dot2);
-//        int cur1 = 0, cur2 = 0;
-        if (dot1 == -1) {
-            dot1 = version1.length();
-        }
-        if (dot2 == -1) {
-            dot2 = version2.length();
+        int longest = v1.length > v2.length ? v1.length : v2.length;
+
+        for (int i = 0; i < longest; i++) {
+            int ver1 = i < v1.length ? Integer.parseInt(v1[i]) : 0;
+            int ver2 = i < v2.length ? Integer.parseInt(v2[i]) : 0;
+
+            if (ver1 > ver2)
+                return 1;
+            if (ver1 < ver2)
+                return -1;
         }
         return 0;
     }
 
     public static void main(String[] args) {
-        System.out.println(compareVersion("02.1", "2.1"));
+        System.out.println(compareVersion("1.3.0", "1.3.1"));
     }
 }
