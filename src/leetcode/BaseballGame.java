@@ -29,7 +29,6 @@ public class BaseballGame {
     }
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         System.out.println(new BaseballGame().calPoints(new String[] { "5", "-2", "4", "C", "D", "9", "+", "+" }));
     }
 
