@@ -21,7 +21,6 @@ public class Base7 {
     }
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         System.out.println(-10 % 7);
         System.out.println(new Base7().convertToBase7(-100));
     }

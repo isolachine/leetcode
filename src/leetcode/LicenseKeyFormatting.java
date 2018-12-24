@@ -19,8 +19,8 @@ public class LicenseKeyFormatting {
                 seg = 0;
             }
         }
-        while (sb.charAt(0) == '-') {
-            sb.deleteCharAt(0);
+        while (sb.length() > 0 && sb.charAt(sb.length() - 1) == '-') {
+            sb.deleteCharAt(sb.length() - 1);
         }
         return sb.reverse().toString();
     }
